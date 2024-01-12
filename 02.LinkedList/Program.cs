@@ -70,7 +70,7 @@ namespace _02.LinkedList
 {
     internal class Program
     {
-        static void Main(string[] args)
+        void Main(string[] args)
         {
             LinkedList<string> linkedList = new LinkedList<string>();
 
