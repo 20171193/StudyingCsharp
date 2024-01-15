@@ -92,7 +92,7 @@ namespace _04._Queue
 {
     internal class Program
     {
-        static void Main(string[] args)
+        void Main()
         {
             Queue<int> queue = new Queue<int>();
 
