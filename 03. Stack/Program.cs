@@ -26,7 +26,7 @@ namespace _03._Stack
 {
     internal class Program
     { 
-        static void Main(string[] args)
+        void Main1()
         {
             Stack<int> stack = new Stack<int>();
 
