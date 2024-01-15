@@ -66,7 +66,7 @@
 // O(n)    O(n)    O(1)    O(1)
 
 
-namespace _02.LinkedList
+namespace _02._LinkedList
 {
     internal class Program
     {

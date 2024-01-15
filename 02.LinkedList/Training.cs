@@ -7,7 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02.LinkedList
+namespace _02._LinkedList
 {
     //< 실습 >
 
