@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 
-
 // 아래와 같이 추가와 삭제가 순서대로 진행될 경우 큐의 출력 순서를 적어주자.(코딩없이)
 //  추가(1, 2, 3, 4, 5),                                                      모두 꺼내기: 1 2 3 4 5
 //  추가(1, 2, 3), 꺼내기(2번), 추가(4, 5, 6), 꺼내기(1번), 추가(7),          모두 꺼내기: 4 5 6 7
@@ -136,8 +135,6 @@ namespace _04._Queue
         //    training.LoopGame();
         //}
     }
-
-
     class StackQueueTest
     {
         public enum ActionType

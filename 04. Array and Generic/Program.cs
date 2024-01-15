@@ -133,7 +133,6 @@ namespace _04._Array_and_Generic
                     return array[index];
                 }
             }
-
             #endregion
 
             #region 일반화 자료형 제약
