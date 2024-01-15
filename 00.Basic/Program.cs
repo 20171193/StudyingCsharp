@@ -31,9 +31,9 @@
 // 가장 높은 차수의 계수와 나머지 모든 항을 제거하고 표기
 // 알고리즘의 대략적인 효율을 파악할 수 있는 수단
 
-namespace _00._ETC
+namespace _00._Basic
 {
-    internal class Description
+    internal class Program
     {
         int Case1(int n)
         {
