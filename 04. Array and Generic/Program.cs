@@ -104,9 +104,13 @@ namespace _04._Array_and_Generic
             }
             #endregion
 
+            #region 일반화 클래스
+
+            #endregion
+
             #region 일반화 자료형 제약
             // where 구문을 사용해 
-            
+
             #endregion
         }
     }
