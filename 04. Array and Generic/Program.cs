@@ -36,7 +36,7 @@ namespace _04._Array_and_Generic
     {
         class Generic
         {
-            #region 일반화
+            #region 배열 일반화
 
             // 일반화를 활용한 배열의 복사
             static void ArrayCopy<T>(T[] arr, T[] temp)
@@ -104,9 +104,79 @@ namespace _04._Array_and_Generic
             }
             #endregion
 
+            #region 일반화 클래스
+            // <일반화 클래스>
+            // 클래스에 필요한 자료형을 일반화하여 구현
+            // 이후 클래스 인스턴스를 생성할 때 자료형을 지정하여 사용
+            public class SafeArray<T>
+            {
+                T[] array;
+
+                public SafeArray(int size)
+                {
+                    array = new T[size];
+                }
+
+                public void Set(int index, T value)
+                {
+                    if (index < 0 || index >= array.Length)
+                        return;
+
+                    array[index] = value;
+                }
+
+                public T Get(int index)
+                {
+                    if (index < 0 || index >= array.Length)
+                        return default(T);      // default : T 자료형의 기본값
+
+                    return array[index];
+                }
+            }
+
+            #endregion
+
             #region 일반화 자료형 제약
             // where 구문을 사용해 
-            
+            // <일반화 자료형 제약>
+            // 일반화 자료형을 선언할 때 제약조건을 선언하여, 사용 당시 쓸 수 있는 자료형을 제한
+            class StructT<T> where T : struct { }           // T는 구조체만 사용 가능
+            class ClassT<T> where T : class { }             // T는 클래스만 사용 가능
+            class NewT<T> where T : new() { }               // T는 매개변수 없는 생성자가 있는 자료형만 사용 가능
+
+            class ParentT<T> where T : Parent { }           // T는 Parent 파생클래스만 사용 가능
+            class InterfaceT<T> where T : IComparable { }   // T는 인터페이스를 포함한 자료형만 사용 가능
+
+            class Parent { }
+            class Child : Parent { }
+
+            void Main2()
+            {
+                StructT<int> structT = new StructT<int>();          // int는 구조체이므로 struct 제약조건이 있는 일반화 자료형에 사용 가능
+                                                                    // ClassT<int> classT = new ClassT<int>();          // error : int는 구조체이므로 class 제약조건이 있는 일반화 자료형에 사용 불가
+                NewT<int> newT = new NewT<int>();                   // int는 new int() 생성자가 있으므로 사용 가능
+
+                ParentT<Parent> parentT = new ParentT<Parent>();    // Parent는 Parent 파생클래스이므로 사용 가능
+                ParentT<Child> childT = new ParentT<Child>();       // Child는 Parent 파생클래스이므로 사용 가능
+                InterfaceT<int> interT = new InterfaceT<int>();     // int는 IComparable 인터페이스를 포함하므로 사용 가능
+            }
+
+
+            // <일반화 제약 용도>
+            // 일반화 자료형에 제약조건이 있다면 포함가능한 자료형의 기능을 사용할 수 있음
+            public class BaseClass
+            {
+                public void Start()
+                {
+                    Console.WriteLine("Start");
+                }
+            }
+
+            public void Main3<T>(T param) where T : BaseClass
+            {
+                param.Start();      // 일반화 자료형의 제약조건이 BaseClass 클래스이므로, BaseClass의 기능을 사용 가능 
+            }
+
             #endregion
         }
     }
