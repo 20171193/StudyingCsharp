@@ -36,6 +36,26 @@ namespace _04._Array_and_Generic
     {
         class Generic
         {
+            #region 박싱/언박싱
+            class Boxing
+            {
+                void Main()
+                {
+                    int number = 7;
+                    object obj = number;        // int 타입의 number 변수 박싱.
+
+                    int number2 = (int)obj;     // 언박싱하여 대입.
+                    // int number3 = obj;       // error : 타입을 명시해주어야함
+
+                    object[] objArr = new object[10];   // object형 배열도 생성 가능.
+                    objArr[0] = 5;     //    int형 박싱
+                    objArr[3] = '5';   //   char형 박싱   
+                    objArr[1] = "5번"; // string형 박싱
+                    objArr[2] = 5.0f;  //  float형 박싱
+                }
+            }
+            #endregion
+
             #region 배열 일반화
 
             // 일반화를 활용한 배열의 복사
