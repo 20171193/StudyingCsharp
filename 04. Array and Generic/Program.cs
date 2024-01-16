@@ -54,6 +54,20 @@ namespace _04._Array_and_Generic
                     objArr[3] = '5';   //   char형 박싱   
                     objArr[1] = "5번"; // string형 박싱
                     objArr[2] = 5.0f;  //  float형 박싱
+
+                    // ArrayList : 일반화되어있지 않은 리스트
+                    //              : 내부적으로 object 타입의 배열을 사용함.
+                    //              : 그 외 List와 동일하게 동작.
+                    ArrayList arrayList = new ArrayList();  
+                    arrayList.Add(5);
+                    arrayList.Add('5');
+                    arrayList.Add("5번");
+                    arrayList.Add(5.0f);
+
+                    int num = (int)arrayList[0];     // 언박싱하여 사용.
+                    char ch = (char)arrayList[1];
+                    string str = (string)arrayList[2];
+                    float fNum = (float)arrayList[3];
                 }
             }
             #endregion
