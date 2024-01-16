@@ -30,6 +30,8 @@
  ********************************************************************************************/
 
 
+using System.Collections;
+
 namespace _04._Array_and_Generic
 {
     internal class Program
@@ -58,8 +60,31 @@ namespace _04._Array_and_Generic
 
             #region 배열 일반화
 
+            // 함수 오버로딩 예시
+            static void ArrayCopy(string[] arr, string[] temp)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    temp[i] = arr[i];
+                }
+            }
+            static void ArrayCopy(int[] arr, int[] temp)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    temp[i] = arr[i];
+                }
+            }
+            static void ArrayCopy(float[] arr, float[] temp)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    temp[i] = arr[i];
+                }
+            }
+
             // 일반화를 활용한 배열의 복사
-            static void ArrayCopy<T>(T[] arr, T[] temp)
+            static void ArrayCopyT<T>(T[] arr, T[] temp)
             {
                 for (int i = 0; i < arr.Length; i++)
                 {
@@ -98,9 +123,9 @@ namespace _04._Array_and_Generic
                 }
                 Console.WriteLine();
 
-                ArrayCopy<int>(a, b);
-                ArrayCopy<float>(c, d);
-                ArrayCopy<string>(e, f);
+                ArrayCopyT<int>(a, b);
+                ArrayCopyT<float>(c, d);
+                ArrayCopyT<string>(e, f);
 
                 Console.WriteLine("after copy");
                 Console.Write("int b:");
