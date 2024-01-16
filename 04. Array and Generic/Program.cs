@@ -30,6 +30,8 @@
  ********************************************************************************************/
 
 
+using System.Collections;
+
 namespace _04._Array_and_Generic
 {
     internal class Program
@@ -52,14 +54,51 @@ namespace _04._Array_and_Generic
                     objArr[3] = '5';   //   char형 박싱   
                     objArr[1] = "5번"; // string형 박싱
                     objArr[2] = 5.0f;  //  float형 박싱
+
+                    // ArrayList : 일반화되어있지 않은 리스트
+                    //              : 내부적으로 object 타입의 배열을 사용함.
+                    //              : 그 외 List와 동일하게 동작.
+                    ArrayList arrayList = new ArrayList();  
+                    arrayList.Add(5);
+                    arrayList.Add('5');
+                    arrayList.Add("5번");
+                    arrayList.Add(5.0f);
+
+                    int num = (int)arrayList[0];     // 언박싱하여 사용.
+                    char ch = (char)arrayList[1];
+                    string str = (string)arrayList[2];
+                    float fNum = (float)arrayList[3];
                 }
             }
             #endregion
 
             #region 배열 일반화
 
+            // 함수 오버로딩 예시
+            static void ArrayCopy(string[] arr, string[] temp)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    temp[i] = arr[i];
+                }
+            }
+            static void ArrayCopy(int[] arr, int[] temp)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    temp[i] = arr[i];
+                }
+            }
+            static void ArrayCopy(float[] arr, float[] temp)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    temp[i] = arr[i];
+                }
+            }
+
             // 일반화를 활용한 배열의 복사
-            static void ArrayCopy<T>(T[] arr, T[] temp)
+            static void ArrayCopyT<T>(T[] arr, T[] temp)
             {
                 for (int i = 0; i < arr.Length; i++)
                 {
@@ -98,9 +137,9 @@ namespace _04._Array_and_Generic
                 }
                 Console.WriteLine();
 
-                ArrayCopy<int>(a, b);
-                ArrayCopy<float>(c, d);
-                ArrayCopy<string>(e, f);
+                ArrayCopyT<int>(a, b);
+                ArrayCopyT<float>(c, d);
+                ArrayCopyT<string>(e, f);
 
                 Console.WriteLine("after copy");
                 Console.Write("int b:");
