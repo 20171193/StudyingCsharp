@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyingCharp", "StudyingCharp\StudyingCharp.csproj", "{9EA32FEC-3FBD-4A76-914B-702907004CBE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructure", "DataStructure", "{D4DC0A67-19C4-4DB2-BB8D-60C81D6945B0}"
+	ProjectSection(SolutionItems) = preProject
+		DataStructure.txt = DataStructure.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. List", "01.List\01. List.csproj", "{4D3FB4FC-C374-4F4A-B0AD-56274440066E}"
 EndProject
@@ -14,28 +17,31 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. LinkedList", "02.LinkedList\02. LinkedList.csproj", "{9BDBE478-84DF-4931-94CE-D339A19B6DF2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Programming", "Programming", "{04346432-7B92-4D09-BB05-18B47075D828}"
+	ProjectSection(SolutionItems) = preProject
+		Programming.txt = Programming.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "00. InputAndOutput", "00.InputAndOutput\00. InputAndOutput.csproj", "{6605CEED-80F7-433A-86B9-A63DCD8A2EAB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Copy", "01.Copy\01. Copy.csproj", "{BB60EA75-BEDF-4158-9D4E-97A3E92620AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. OOP", "02.OOP\02. OOP.csproj", "{0127FC2D-3EEC-4EFE-8598-CB3D7ACF5AB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. OOP", "02.OOP\02. OOP.csproj", "{0127FC2D-3EEC-4EFE-8598-CB3D7ACF5AB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Interface", "03. Interface\03. Interface.csproj", "{D4CEA7BE-E489-4CCA-AFD5-E299FCA733FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Interface", "03. Interface\03. Interface.csproj", "{D4CEA7BE-E489-4CCA-AFD5-E299FCA733FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Array and Generic", "04. Array and Generic\04. Array and Generic.csproj", "{39F41315-9374-4FC4-9BDC-9EAAFAA8CA10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Array and Generic", "04. Array and Generic\04. Array and Generic.csproj", "{39F41315-9374-4FC4-9BDC-9EAAFAA8CA10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Delegate", "05. Delegate\05. Delegate.csproj", "{8CBA18BC-ECC6-430D-B576-C66680F89EE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. Delegate", "05. Delegate\05. Delegate.csproj", "{8CBA18BC-ECC6-430D-B576-C66680F89EE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Event", "06. Event\06. Event.csproj", "{3FB8EA11-A91A-4AF0-A24F-61E55DBA1AA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06. Event", "06. Event\06. Event.csproj", "{3FB8EA11-A91A-4AF0-A24F-61E55DBA1AA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Additional", "07. Additional\07. Additional.csproj", "{B9DAC806-953C-4C91-9840-598B10B12658}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07. Additional", "07. Additional\07. Additional.csproj", "{B9DAC806-953C-4C91-9840-598B10B12658}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Stack", "03. Stack\03. Stack.csproj", "{3416A845-DC47-4468-A269-BA5940500CDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Stack", "03. Stack\03. Stack.csproj", "{3416A845-DC47-4468-A269-BA5940500CDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Queue", "04. Queue\04. Queue.csproj", "{978303D0-9F8B-4F36-A16E-2413D4E99B4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Queue", "04. Queue\04. Queue.csproj", "{978303D0-9F8B-4F36-A16E-2413D4E99B4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. BinarySearchTree", "05. BinarySearchTree\05. BinarySearchTree.csproj", "{5C021BEB-637D-4FE9-AA13-4BEFF02C260F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. BinarySearchTree", "05. BinarySearchTree\05. BinarySearchTree.csproj", "{5C021BEB-637D-4FE9-AA13-4BEFF02C260F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
