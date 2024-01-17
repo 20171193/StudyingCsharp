@@ -43,6 +43,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Queue", "04. Queue\04. 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. BinarySearchTree", "05. BinarySearchTree\05. BinarySearchTree.csproj", "{5C021BEB-637D-4FE9-AA13-4BEFF02C260F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Heap", "06. Heap\06. Heap.csproj", "{BD104E8B-A0C4-446A-9346-AE1BEED2D8C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +111,10 @@ Global
 		{5C021BEB-637D-4FE9-AA13-4BEFF02C260F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C021BEB-637D-4FE9-AA13-4BEFF02C260F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C021BEB-637D-4FE9-AA13-4BEFF02C260F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD104E8B-A0C4-446A-9346-AE1BEED2D8C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD104E8B-A0C4-446A-9346-AE1BEED2D8C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD104E8B-A0C4-446A-9346-AE1BEED2D8C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD104E8B-A0C4-446A-9346-AE1BEED2D8C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -128,6 +134,7 @@ Global
 		{3416A845-DC47-4468-A269-BA5940500CDB} = {D4DC0A67-19C4-4DB2-BB8D-60C81D6945B0}
 		{978303D0-9F8B-4F36-A16E-2413D4E99B4D} = {D4DC0A67-19C4-4DB2-BB8D-60C81D6945B0}
 		{5C021BEB-637D-4FE9-AA13-4BEFF02C260F} = {D4DC0A67-19C4-4DB2-BB8D-60C81D6945B0}
+		{BD104E8B-A0C4-446A-9346-AE1BEED2D8C0} = {D4DC0A67-19C4-4DB2-BB8D-60C81D6945B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {42B95C54-9CD8-4358-95E7-067FCCE10796}
