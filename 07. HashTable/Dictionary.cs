@@ -20,15 +20,15 @@ namespace DataStructure
         }
 
         private Entry[] table;
-        private int count;
+        private int usedCount;
 
         public Dictionary()
         {
             table = new Entry[DefaultCapacity];
-            count = 0;
+            usedCount = 0;
         }
 
-        public TValue this[TKey key]
+        public TValue this[TKey key]        // indexer로 배열과 같은 접근 허용.   // ex) dic[key] = value;
         {
             get
             {
@@ -49,7 +49,7 @@ namespace DataStructure
                 }
                 else
                 {
-                    if (count > table.Length * 0.7f)
+                    if (usedCount > table.Length * 0.7f)
                     {
                         ReHashing();
                     }
@@ -57,7 +57,7 @@ namespace DataStructure
                     table[index].key = key;
                     table[index].value = value;
                     table[index].state = Entry.State.Using;
-                    count++;
+                    usedCount++;
                 }
             }
         }
@@ -70,7 +70,7 @@ namespace DataStructure
             }
             else
             {
-                if (count > table.Length * 0.7f)
+                if (usedCount > table.Length * 0.7f)
                 {
                     ReHashing();
                 }
@@ -78,14 +78,14 @@ namespace DataStructure
                 table[index].key = key;
                 table[index].value = value;
                 table[index].state = Entry.State.Using;
-                count++;
+                usedCount++;
             }
         }
 
         public void Clear()
         {
             table = new Entry[DefaultCapacity];
-            count = 0;
+            usedCount = 0;
         }
 
         public bool ContainsKey(TKey key)
@@ -158,7 +158,7 @@ namespace DataStructure
         {
             Entry[] oldTable = table;
             table = new Entry[table.Length * 2];
-            count = 0;
+            usedCount = 0;
 
             for (int i = 0; i <  oldTable.Length; i++)
             {
