@@ -144,6 +144,8 @@
             // 중복을 허용하지 않는 key를 기준으로 해시기반의 value 저장소
             Dictionary<int, string> dictionary = new Dictionary<int, string>();
 
+            Dictionary<object, object> dic = new Dictionary<>
+
             // 삽입
             dictionary.Add(2, "A");
             dictionary.Add(1, "B");
