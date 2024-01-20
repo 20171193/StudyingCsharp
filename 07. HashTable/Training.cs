@@ -56,7 +56,7 @@ namespace Training
         }
         public void RunGame()
         {
-            while(loop)
+            while (loop)
             {
                 Render();
                 Input();
@@ -66,10 +66,93 @@ namespace Training
 
     public class Program
     {
-        static void Main(string[] argc)
+        void Main2()
         {
             CheatKey cheatKey = new CheatKey();
             cheatKey.RunGame();
         }
     }
 }
+
+
+namespace CodingTest
+{
+    #region 백준 17296 비밀번호 만들기
+    //public class Program
+    //{
+    //    static void Main(string[] argc)
+    //    {
+    //        Dictionary<string, string> dic = new Dictionary<string, string>();
+    //        List<string> answer = new List<string>();
+    //        int n = 0, m = 0;
+    //        string[] nm = Console.ReadLine().Split(' ');
+    //        n = int.Parse(nm[0]);
+    //        m = int.Parse(nm[1]);
+
+    //        for (int i = 0; i < n; i++)
+    //        {
+    //            string[] temp = Console.ReadLine().Split(' ');
+    //            dic.Add(temp[0], temp[1]);
+    //        }
+
+    //        for (int i = 0; i < m; i++)
+    //        {
+    //            answer.Add(dic[Console.ReadLine()]);
+    //        }
+    //        foreach (string a in answer)
+    //        {
+    //            Console.WriteLine(a);
+    //        }
+    //    }
+    //}
+    #endregion
+    #region 백준 5568번 카드 놓기
+    class Program
+    {
+        static public HashSet<string> set = new HashSet<string>();
+        
+        static void Perm(string[] list, string[] result, bool[] used, int depth,int n, int r)
+        {
+            if(depth == r)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach(string s in result)
+                {
+                    sb.Append(s);
+                }
+                set.Add(sb.ToString());
+                return;
+            }
+
+            for(int i = 0; i< n; i++)
+            {
+                if (!used[i])
+                {
+                    result[depth] = list[i];
+                    used[i] = true;
+                    Perm(list, result, used, depth + 1, n, r);
+                    used[i] = false;
+                }
+            }
+        }
+
+        static void Main(string[] argc)
+        {
+            int n = 0, k = 0;
+            n = int.Parse(Console.ReadLine());
+            k = int.Parse(Console.ReadLine());
+            bool[] used = new bool[n];
+            string[] str = new string[n];
+            for (int i=0; i<n; i++)
+            {
+                str[i] = Console.ReadLine();
+            }
+
+            Perm(str, new string[n], used, 0, n, k);
+
+            Console.WriteLine(set.Count);
+        }
+    }
+    #endregion
+}
+
