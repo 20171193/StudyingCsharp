@@ -110,7 +110,7 @@
         //  X         O(1)       O(1)       O(1)
 
 
-        static void Main(string[] args)
+        void Main3()
         {
             // 해시테이블 기반의 HashSet 자료구조
             // 중복이 없는 해시기반의 저장소
@@ -143,8 +143,6 @@
             // 해시테이블 기반의 Dictionary 자료구조
             // 중복을 허용하지 않는 key를 기준으로 해시기반의 value 저장소
             Dictionary<int, string> dictionary = new Dictionary<int, string>();
-
-            Dictionary<object, object> dic = new Dictionary<>
 
             // 삽입
             dictionary.Add(2, "A");
