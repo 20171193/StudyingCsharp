@@ -11,8 +11,7 @@ namespace _08._DesignTechnique
     {
         class NandM3
         {
-
-            static void Main(string[] argc)
+            void Main1()
             {
                 int n = 0, m = 0;
                 string[] temp = Console.ReadLine().Split();
@@ -45,6 +44,29 @@ namespace _08._DesignTechnique
 
         }
 
-        //class 
+        class ATM
+        {
+            // 누적합
+            public static int n = 0, sum = 0, preSum;
+            public static int[] arr;
+            static void Main(string[] argc)
+            {
+                n = int.Parse(Console.ReadLine());
+                string[] temp = Console.ReadLine().Split();
+                arr = new int[n];
+                for(int i=0; i<n; i++)
+                {
+                    arr[i] = int.Parse(temp[i]);
+                }
+                Array.Sort(arr);
+
+                foreach(int i in arr)
+                {
+                    preSum += i;
+                    sum += preSum;
+                }
+                Console.WriteLine(sum);
+            }
+        }
     }
 }
