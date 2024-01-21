@@ -49,21 +49,116 @@ namespace _08._DesignTechnique
             // 누적합
             public static int n = 0, sum = 0, preSum;
             public static int[] arr;
-            static void Main(string[] argc)
+            void Main2()
             {
                 n = int.Parse(Console.ReadLine());
                 string[] temp = Console.ReadLine().Split();
                 arr = new int[n];
-                for(int i=0; i<n; i++)
+                for (int i = 0; i < n; i++)
                 {
                     arr[i] = int.Parse(temp[i]);
                 }
                 Array.Sort(arr);
 
-                foreach(int i in arr)
+                foreach (int i in arr)
                 {
                     preSum += i;
                     sum += preSum;
+                }
+                Console.WriteLine(sum);
+            }
+        }
+
+        class MakeConfetti
+        {
+            // 분할정복 풀이
+            static int[,] arr;
+            static int n = 0, white = 0, blue = 0;
+            void Main3()
+            {
+                n = int.Parse(Console.ReadLine());
+                arr = new int[n, n];
+                for (int i = 0; i < n; i++)
+                {
+                    string[] temp = Console.ReadLine().Split(' ');
+                    for (int j = 0; j < n; j++)
+                    {
+                        arr[i, j] = int.Parse(temp[j]);
+                    }
+                }
+
+                Go(0, 0, n);
+
+                Console.WriteLine(white);
+                Console.WriteLine(blue);
+            }
+
+            static void Go(int x, int y, int _n)
+            {
+                int whiteSpace = 0;
+                for (int i = y; i < _n + y; i++)
+                {
+                    for (int j = x; j < _n + x; j++)
+                    {
+                        if (arr[i, j] == 0) whiteSpace++;
+                    }
+                }
+
+                if (whiteSpace == 0)
+                {
+                    blue++;
+                }
+                else if (whiteSpace == _n * _n)
+                {
+                    white++;
+                }
+                else
+                {
+                    Go(x, y, _n / 2);
+                    Go(x + _n / 2, y, _n / 2);
+                    Go(x, y + _n / 2, _n / 2);
+                    Go(x + _n / 2, y + _n / 2, _n / 2);
+                }
+            }
+        }
+
+        class IntegerTriangle
+        {
+            static int n = 0, sum = 0;
+            static int[,] dp;
+
+            static void Main(string[] argc)
+            {
+                n = int.Parse(Console.ReadLine());
+                dp = new int[n, n];
+                for (int i = 0; i < n; i++)
+                {
+                    string[] temp = Console.ReadLine().Split(' ');
+                    for (int j = 0; j < i + 1; j++)
+                    {
+                        dp[i, j] = int.Parse(temp[j]);
+                    }
+                }
+
+                for (int i = 1; i < n; i++)
+                {
+                    dp[i, 0] += dp[i - 1, 0];
+                    for (int j = 1; j < i + 1; j++)
+                    {
+                        if (dp[i - 1, j] < dp[i - 1, j - 1])
+                        {
+                            dp[i, j] += dp[i - 1, j-1];
+                        }
+                        else
+                        {
+                            dp[i, j] += dp[i - 1, j];
+                        }
+                    }
+                }
+
+                for (int i = 0; i < n; i++)
+                {
+                    sum = Math.Max(dp[n - 1, i], sum);
                 }
                 Console.WriteLine(sum);
             }
