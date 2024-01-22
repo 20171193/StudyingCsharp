@@ -49,6 +49,15 @@ namespace _08._DesignTechnique
             // 누적합
             public static int n = 0, sum = 0, preSum;
             public static int[] arr;
+
+            static int PrefixSum(int _n, int _sum, int _preSum)
+            {
+                if (_n >= n) return _sum;
+                _preSum += arr[_n];
+                _sum += _preSum;
+                return PrefixSum(_n + 1, _sum, _preSum);
+            }
+
             void Main2()
             {
                 n = int.Parse(Console.ReadLine());
@@ -60,12 +69,16 @@ namespace _08._DesignTechnique
                 }
                 Array.Sort(arr);
 
-                foreach (int i in arr)
-                {
-                    preSum += i;
-                    sum += preSum;
-                }
-                Console.WriteLine(sum);
+                // 반복문 사용
+                //foreach (int i in arr)
+                //{
+                //    preSum += i;
+                //    sum += preSum;
+                //}
+                //Console.WriteLine(sum);
+
+                // 재귀 사용
+                Console.WriteLine(PrefixSum(0, 0, 0));
             }
         }
 
@@ -127,7 +140,7 @@ namespace _08._DesignTechnique
             static int n = 0, sum = 0;
             static int[,] dp;
 
-            static void Main(string[] argc)
+            void Main4()
             {
                 n = int.Parse(Console.ReadLine());
                 dp = new int[n, n];
