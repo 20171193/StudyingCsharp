@@ -49,6 +49,15 @@ namespace _08._DesignTechnique
             // 누적합
             public static int n = 0, sum = 0, preSum;
             public static int[] arr;
+
+            static int PrefixSum(int _n, int _sum, int _preSum)
+            {
+                if (_n >= n) return _sum;
+                _preSum += arr[_n];
+                _sum += _preSum;
+                return PrefixSum(_n + 1, _sum, _preSum);
+            }
+
             void Main2()
             {
                 n = int.Parse(Console.ReadLine());
@@ -60,12 +69,16 @@ namespace _08._DesignTechnique
                 }
                 Array.Sort(arr);
 
-                foreach (int i in arr)
-                {
-                    preSum += i;
-                    sum += preSum;
-                }
-                Console.WriteLine(sum);
+                // 반복문 사용
+                //foreach (int i in arr)
+                //{
+                //    preSum += i;
+                //    sum += preSum;
+                //}
+                //Console.WriteLine(sum);
+
+                // 재귀 사용
+                Console.WriteLine(PrefixSum(0, 0, 0));
             }
         }
 
@@ -127,7 +140,7 @@ namespace _08._DesignTechnique
             static int n = 0, sum = 0;
             static int[,] dp;
 
-            static void Main(string[] argc)
+            void Main4()
             {
                 n = int.Parse(Console.ReadLine());
                 dp = new int[n, n];
@@ -161,6 +174,59 @@ namespace _08._DesignTechnique
                     sum = Math.Max(dp[n - 1, i], sum);
                 }
                 Console.WriteLine(sum);
+            }
+        }
+
+        class HanoiTower
+        {
+            // n 원판이 1번 기둥의 꼭대기,
+            // n-1 원판이 2번 기둥의 꼭대기에 위치해야함. 
+
+            // 1 - 3
+            // 1 - 2
+            // 3 - 2
+            // 1 - 3
+            // 2 - 1
+            // 2 - 3
+
+            static int n = 0, k = 0;
+            static Stack<int>[] st;
+            static StringBuilder sb = new StringBuilder();
+            static void Go(int _n, int start, int end)
+            {
+                int middle = 3 - (start + end);
+                if (_n == 1)
+                {
+                    k++;
+                    st[end].Push(st[start].Pop());
+                    if (n > 20) return;
+                    sb.Append(start + 1);
+                    sb.Append(" ");
+                    sb.Append(end + 1);
+                    sb.AppendLine();
+                    return;
+                }
+                Go(_n - 1, start, middle);
+                Go(1, start, end);
+                Go(_n - 1, middle, end);
+            }
+            static void Main(string[] argc)
+            {
+                n = int.Parse(Console.ReadLine());
+                st = new Stack<int>[3];
+                st[0] = new Stack<int>();
+                st[1] = new Stack<int>();
+                st[2] = new Stack<int>();
+
+                for(int i=n; i>=1; i--)
+                {
+                    st[0].Push(i);
+                }
+                Go(n, 0, 2);
+
+                Console.WriteLine(k);
+                if (n > 20) return;
+                Console.WriteLine(sb.ToString());
             }
         }
     }
