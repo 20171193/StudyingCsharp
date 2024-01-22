@@ -176,5 +176,58 @@ namespace _08._DesignTechnique
                 Console.WriteLine(sum);
             }
         }
+
+        class HanoiTower
+        {
+            // n 원판이 1번 기둥의 꼭대기,
+            // n-1 원판이 2번 기둥의 꼭대기에 위치해야함. 
+
+            // 1 - 3
+            // 1 - 2
+            // 3 - 2
+            // 1 - 3
+            // 2 - 1
+            // 2 - 3
+
+            static int n = 0, k = 0;
+            static Stack<int>[] st;
+            static StringBuilder sb = new StringBuilder();
+            static void Go(int _n, int start, int end)
+            {
+                int middle = 3 - (start + end);
+                if (_n == 1)
+                {
+                    k++;
+                    st[end].Push(st[start].Pop());
+                    if (n > 20) return;
+                    sb.Append(start + 1);
+                    sb.Append(" ");
+                    sb.Append(end + 1);
+                    sb.AppendLine();
+                    return;
+                }
+                Go(_n - 1, start, middle);
+                Go(1, start, end);
+                Go(_n - 1, middle, end);
+            }
+            static void Main(string[] argc)
+            {
+                n = int.Parse(Console.ReadLine());
+                st = new Stack<int>[3];
+                st[0] = new Stack<int>();
+                st[1] = new Stack<int>();
+                st[2] = new Stack<int>();
+
+                for(int i=n; i>=1; i--)
+                {
+                    st[0].Push(i);
+                }
+                Go(n, 0, 2);
+
+                Console.WriteLine(k);
+                if (n > 20) return;
+                Console.WriteLine(sb.ToString());
+            }
+        }
     }
 }
