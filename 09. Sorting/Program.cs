@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        void Main1()
         {
             Random random = new Random();
             int count = 20;
