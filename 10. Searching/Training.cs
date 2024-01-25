@@ -127,6 +127,13 @@ namespace _10._Searching
 
         class BOJ1388
         {
+            // 같은 로직 C# 풀이
+            // ______________________________
+            // |        |   C#    |    C++  |
+            // | 메모리 | 5712KB  |  2028KB |   
+            // |   시간 |  64ms   |   64ms  |
+            // ------------------------------
+
             static int n = 0, m = 0, ret = 0;
             static string[] arr;
             static bool[,] visited;
