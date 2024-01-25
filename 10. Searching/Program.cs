@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        void Main111()
         {
             // 순차탐색
             int[] array = { 1, 3, 5, 7, 9, 8, 6, 4, 2, 0 };
