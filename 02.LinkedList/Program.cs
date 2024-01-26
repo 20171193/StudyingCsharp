@@ -65,6 +65,10 @@
 // 접근    탐색    삽입    삭제
 // O(n)    O(n)    O(1)    O(1)
 
+// List랑 차이점
+
+// List는 배열을 사용
+// Linked List는 노드를 사용
 
 namespace _02._LinkedList
 {
