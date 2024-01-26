@@ -214,7 +214,7 @@ namespace _01._List
 
         public class MainProgram
         {
-            static void Main(string[] argc)
+            void Main(string[] argc)
             {
                 Game game = new Game();
                 game.GameLoop();

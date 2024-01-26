@@ -65,6 +65,7 @@
 // │1│2│3│4│5│6│7│8│A│ │ │ │ │ │ │ │
 // └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
 
+// 크기가 다 차면 기존 용량 * 2
 
 // <리스트 시간복잡도>
 // 접근    탐색    삽입    삭제
@@ -75,21 +76,20 @@ namespace _01._List
 {
     internal class Program
     {
-        void Main2()
+        static void Main(string[] argc)
         {
             List<string> list = new List<string>();
 
             // 삽입
             list.Add("0번 데이터");
             list.Add("1번 데이터");
-            list.Add("2번 데이터");
-            list.Insert(1, "중간 데이터1");
-            list.Insert(3, "중간 데이터2");
-
+            list.Add("야");
+            //list.Insert(1, "중간 데이터1");
+            //list.Insert(3, "중간 데이터2");
 
             // 삭제
             list.Remove("1번 데이터");
-            list.RemoveAt(1);
+            //list.RemoveAt(1);
 
 
             // 접근
@@ -98,8 +98,10 @@ namespace _01._List
 
 
             // 탐색
-            int indexOf = list.IndexOf("2번 데이터");
+            int indexOf = list.IndexOf("야");
             int findIndex = list.FindIndex(x => x.Contains("중간"));
+
+            Console.WriteLine($"{list[1]}");
         }
     }
 }

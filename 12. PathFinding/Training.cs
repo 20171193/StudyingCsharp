@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace _12._PathFinding
 {
+
     internal class Training
     {
+        
         char[,] tileMap2 = new char[9, 9]
         {
             { '■', '■', '■', '■', '■', '■', '■', '■', '■' },
@@ -20,7 +22,6 @@ namespace _12._PathFinding
             { '■', '*', '*', '*', '■', '■', '■', 'E', '■' },
             { '■', '■', '■', '■', '■', '■', '■', '■', '■' },
         };
-
         public struct Point
         {
             public int x;
